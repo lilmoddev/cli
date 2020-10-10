@@ -1,0 +1,16 @@
+syntax = "proto3";
+package lilmod;
+option go_package = "lilmod";
+
+service API {
+    rpc Proxy(ProxyRequest) returns (ProxyResponse);
+}
+
+message ProxyRequest {
+    string proxyToken = 1;
+}
+
+message ProxyResponse {
+    string URL = 1;
+    repeated string privatePaths = 2;
+}
