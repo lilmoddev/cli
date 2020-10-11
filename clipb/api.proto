@@ -1,6 +1,6 @@
 syntax = "proto3";
-package proto;
-option go_package = "cli.lilmod.dev/proto;proto";
+package clipb;
+option go_package = "cli.lilmod.dev/clipb;clipb";
 
 service API {
     rpc Proxy(ProxyRequest) returns (ProxyResponse);
