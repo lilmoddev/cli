@@ -8,7 +8,7 @@ import (
 	"os/exec"
 	"strings"
 
-	lilmod "cli.lilmod.dev"
+	lilmodpb "cli.lilmod.dev/proto"
 	"github.com/manifoldco/promptui"
 	"github.com/urfave/cli/v2"
 )
@@ -86,8 +86,8 @@ func login(c *cli.Context) error {
 			return fmt.Errorf("could not get token from prompt: %w", err)
 		}
 	}
-	lilmodClient := lilmod.NewAPIProtobufClient(registry, http.DefaultClient)
-	resp, err := lilmodClient.Proxy(c.Context, &lilmod.ProxyRequest{ProxyToken: token})
+	lilmodClient := lilmodpb.NewAPIProtobufClient(registry, http.DefaultClient)
+	resp, err := lilmodClient.Proxy(c.Context, &lilmodpb.ProxyRequest{ProxyToken: token})
 	if err != nil {
 		// TODO: nicer message when invalid auth
 		return fmt.Errorf("error authenticating: %w", err)
