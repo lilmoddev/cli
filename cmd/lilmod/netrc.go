@@ -38,6 +38,7 @@ func writeNETRC(host, user, password, path string) error {
 	if err != nil {
 		return fmt.Errorf("could not marshal netrc: %w", err)
 	}
+	bts = append(bts, '\n')
 	err = ioutil.WriteFile(path, bts, 0660)
 	if err != nil {
 		return fmt.Errorf("could not write netrc to file: %w", err)
