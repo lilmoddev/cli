@@ -41,7 +41,8 @@ func main() {
 				Name: "logout",
 				Flags: []cli.Flag{
 					&cli.StringFlag{
-						Name: "registry", // to remove from .netrc
+						Name:  "registry", // to remove from .netrc
+						Value: "https://dev.lilmod.dev",
 					},
 				},
 				Action: func(c *cli.Context) error {
