@@ -24,6 +24,8 @@ func main() {
 						Name:    "registry",
 						Aliases: []string{"r"},
 						Usage:   "The registry URL to verify your login credentials and retrieve your GOPROXY URL",
+						Value:   "https://dev.lilmod.dev",
+						EnvVars: []string{"LILMOD_REGISTRY"},
 					},
 					&cli.BoolFlag{
 						Name:  "token-stdin",
